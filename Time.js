@@ -1,5 +1,5 @@
 var Date = new Date();
-var weekday = Date.getDay();
+var day = Date.getDay();
 var hr = Date.getHours();
 var min = Date.getMinutes();
 var sec = Date.getSeconds();
@@ -29,39 +29,39 @@ function getWeekday(numDate){
 
 switch(numDate) {
   case 0:
-    weekday = "Sunday";
+    day = "Sunday";
     break;
 
   case 1:
-    weekday = "Monday";
+    day = "Monday";
     break;
 
   case 2:
-    weekday = "Tuesday";
+    day = "Tuesday";
     break;
 
   case 3:
-    weekday = "Wednesday";
+    day = "Wednesday";
     break;
 
   case 4:
-    weekday = "Thursday";
+    day = "Thursday";
     break;
 
   case 5:
-    weekday = "Friday";
+    day = "Friday";
     break;
 
   case 6:
-    weekday = "Saturday";
+    day = "Saturday";
     break;
 
   default:
-    weekday = "Invalid";
+    day = "Invalid";
 }
 
-  return weekday;
+  return day;
 
 }
 
-console.log("Today is : " + getWeekday(dayOfWeek) + ".\n" + "Current time is : " + outputTime(hr, min, sec));
+console.log("Today is : " + getWeekday(day) + ".\n" + "Current time is : " + outputTime(hr, min, sec));
