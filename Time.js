@@ -64,4 +64,6 @@ switch(date) {
 
 }
 
-console.log("Today is : " + getWeekday(day) + ".\n" + "Current time is : " + outputTime(hr, min, sec));
+console.log("Today is: " + getWeekday(day) + ".\n" + "Current time is : " + outputTime(hr, min, sec));
+
+document.getElementById("p1").innerHTML = "Today is: " + getWeekday(day) + "." + "<br/>" + "<br/>" + "Current time is : " + outputTime(hr, min, sec);
