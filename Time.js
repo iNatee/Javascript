@@ -25,9 +25,9 @@ function outputTime(hrs, mins, secs) {
 }
 
 
-function getWeekday(numDate){
+function getWeekday(date){
 
-switch(numDate) {
+switch(date) {
   case 0:
     day = "Sunday";
     break;
