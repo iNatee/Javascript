@@ -1,5 +1,3 @@
-//version 1.1
-
 var Date = new Date();
 var dayOfWeek = Date.getDay();
 var hr = Date.getHours();
