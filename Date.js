@@ -2,6 +2,7 @@ var myDate = new Date();
 var dd = myDate.getDate();
 var mm = myDate.getMonth() + 1;
 var yyyy = myDate.getFullYear();
+var hasClick = true;
 
 var day = (function() {
 var dayOfWeek = myDate.getDay();
@@ -105,6 +106,19 @@ switch (monthInYear)  {
 
 }());
 
+function changeDate(hasClick) {
+
+  var elDate = document.getElementById('date');
+
+  if (hasClick == true) {
+    hasClick = false;
+    return DDMMYYYY (dd, mm, yyyy);
+  } else {
+    hasClick = true;
+    return DAYMONTHYYYY(day, dd, month, yyyy);
+  }
+
+}
 
 function DDMMYYYY (dd, mm, yyyy) {
   if (dd < 10)  {
@@ -137,32 +151,10 @@ function DAYMONTHYYYY(day, dd, month, yyyy) {
 
 }
 
-function changeDateFormat(day, dd, mm, month, yy) {
+var btnChange = document.getElementById('btnChangeFormat');
+btnChange.addEventListener('click', function() {changeDate(hasClick);}, false);
 
 
-if (currentDate == dd + "/" + mm + "/" + yyyy) {
-
-  return DAYMONTHYYYY(day, dd, month, yy);
-
-  } else {
-
-  return DDMMYYYY(dd, mm, yyyy);
-
-  }
-
-}
-
-
-var currentDate = DAYMONTHYYYY(day, dd, month, yyyy);
-console.log(currentDate);
 var heading = document.getElementById('head1');
-var newHeading = "Date";
+var newHeading = changeDate(hasClick);
 heading.innerHTML = '<h1 id = "head1">' + newHeading + '</h1>';
-
-var newEl = document.createElement('p');
-var currentDate = document.createTextNode(currentDate);
-newEl.appendChild(currentDate);
-var position = document.getElementsByTagName('ul')[0];
-position.appendChild(newEl);
-
-document.getElementById('changeFormat')
