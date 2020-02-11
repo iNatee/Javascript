@@ -106,20 +106,6 @@ switch (monthInYear)  {
 
 }());
 
-function changeDate(hasClick) {
-
-  var elDate = document.getElementById('date');
-
-  if (hasClick == true) {
-    hasClick = false;
-    return DDMMYYYY (dd, mm, yyyy);
-  } else {
-    hasClick = true;
-    return DAYMONTHYYYY(day, dd, month, yyyy);
-  }
-
-}
-
 function DDMMYYYY (dd, mm, yyyy) {
   if (dd < 10)  {
     dd = "0" + dd;
@@ -151,10 +137,10 @@ function DAYMONTHYYYY(day, dd, month, yyyy) {
 
 }
 
-var btnChange = document.getElementById('btnChangeFormat');
-btnChange.addEventListener('click', function() {changeDate(hasClick);}, false);
-
-
 var heading = document.getElementById('head1');
-var newHeading = changeDate(hasClick);
+var newHeading = DDMMYYYY (dd, mm, yyyy);
+heading.innerHTML = '<h1 id = "head1">' + newHeading + '</h1>';
+
+var heading = document.getElementById('head2');
+var newHeading = DAYMONTHYYYY(day, dd, month, yyyy);
 heading.innerHTML = '<h1 id = "head1">' + newHeading + '</h1>';
