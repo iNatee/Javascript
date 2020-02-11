@@ -17,9 +17,9 @@ var sideC = prompt('Please enter he size of Side C:'); //Get side C
 } while (sideA == null || sideB == null || sideC == null)
 
   var sides = new Array(3);
-  sides[0] = "sideA";
-  sides[1] = "sideB";
-  sides[2] = "sideC";
+  sides[0] = sideA;
+  sides[1] = sideB;
+  sides[2] = sideC;
 
   return sides;
 
