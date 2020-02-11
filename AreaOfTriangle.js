@@ -8,23 +8,6 @@ function calcArea(a, b, c)  {
 
 }
 
-function findSides(){
-
-do{
-var sideA = prompt('Please enter he size of Side A:'); //Get Side A
-var sideB = prompt('Please enter he size of Side B:'); //Get side B
-var sideC = prompt('Please enter he size of Side C:'); //Get side C
-} while (sideA == null || sideB == null || sideC == null)
-
-  var sides = new Array(3);
-  sides[0] = sideA;
-  sides[1] = sideB;
-  sides[2] = sideC;
-
-  return sides;
-
-}
-
 function findSideA(repeat){
 
 let error = "";
@@ -83,9 +66,9 @@ return Number(sideC);
 }
 
 const REPEAT = false;
-var sideA = findSideA(REPEAT);
-var sideB = findSideB(REPEAT);
-var sideC = findSideC(REPEAT);
+var sideA = findSides[0];
+var sideB = findSides[1];
+var sideC = findSides[2];
 var sideArea = Number(calcArea(sideA, sideB, sideC));
 
 var node1 = document.createElement('h1');
