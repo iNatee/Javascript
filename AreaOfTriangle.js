@@ -66,9 +66,9 @@ return Number(sideC);
 }
 
 const REPEAT = false;
-var sideA = findSides[0];
-var sideB = findSides[1];
-var sideC = findSides[2];
+var sideA = findSideA(REPEAT);
+var sideB = findSideB(REPEAT);
+var sideC = findSideC(REPEAT);
 var sideArea = Number(calcArea(sideA, sideB, sideC));
 
 var node1 = document.createElement('h1');
