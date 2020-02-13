@@ -1,16 +1,13 @@
-var Date = new Date();
-var day = Date.getDay();
-var hr = Date.getHours();
-var min = Date.getMinutes();
-var sec = Date.getSeconds();
-var dd = Date.getDate();
-var mm = Date.getMonth() + 1;
-var yyyy = Date.getFullYear();
-var dateShort = DDMMYYYY (dd, mm, yyyy);
-var dateFull = DAYMONTHYYYY(day, dd, month, yyyy);
+var newDate = new Date(),
+ hr = newDate.getHours(),
+ min = newDate.getMinutes(),
+ sec = newDate.getSeconds(),
+ dd = newDate.getDate(),
+ mm = newDate.getMonth() + 1,
+ yyyy = newDate.getFullYear();
 
 var day = (function() {
-var dayOfWeek = Date.getDay();
+var dayOfWeek = newDate.getDay();
 
 switch (dayOfWeek)  {
   case 0:
@@ -51,7 +48,7 @@ switch (dayOfWeek)  {
 }());
 
 var month = (function() {
-var monthInYear = Date.getMonth() + 1;
+var monthInYear = newDate.getMonth() + 1;
 
 switch (monthInYear)  {
   case 1:
@@ -165,22 +162,55 @@ function DAYMONTHYYYY(day, dd, month, yyyy) {
 
 }
 
-var unorderedList = document.createElement('ul');
-var listItem = document.createElement('li');
+var idVar = setInterval(() => {
+	timer()
+}, 1000);
 
-var dateLong = document.createTextNode("Full Date: " + dateFull);
-var dateSmall = document.createTextNode("Short Date: " + dateShort);
-var currentTime = document.createTextNode("Current Time: " + outputTime(hr, min, sec));
+function timer() {
+
+  var dateVar = new Date(),
+  ampm,
+  hrs = dateVar.getHours(),
+  mins= dateVar.getMinutes(),
+  secs = dateVar.getSeconds(),
+  time = dateVar.toLocaleTimeString();
+
+
+  if (hrs < 12 && hrs != 0) {
+  	ampm = "AM";
+  }
+
+   else {
+  	ampm = "PM";
+  }
+
+  if (mins < 10)  {
+    mins = "0" + mins;
+  }
+
+  if (secs < 10)  {
+    secs = "0" + secs;
+  }
+
+  document.getElementById("timeArea").innerHTML = time + ampm;
+  document.getElementById("timeArea").appendChild(document.createElement("br"));
+  document.getElementById("timeArea").appendChild(document.createElement("br"));
+};
+
+var dateSmall = DDMMYYYY (dd, mm, yyyy),
+ dateFull = DAYMONTHYYYY(day, dd, month, yyyy),
+ unorderedList = document.createElement('ul'),
+
+ listItem = document.createElement('li'),
+ dateLong = document.createTextNode("Full Date: " + dateFull),
+ dateShort = document.createTextNode("Short Date: " + dateSmall),
+ currentTime = document.createTextNode(idVar);
 
 var pos1 = document.getElementsByTagName('ul')[0];
 pos1.appendChild(dateLong);
 pos1.appendChild(document.createElement("br"));
 pos1.appendChild(document.createElement("br"));
 var pos2 = document.getElementsByTagName('ul')[0];
-pos2.appendChild(dateSmall);
+pos2.appendChild(dateShort);
 pos2.appendChild(document.createElement("br"));
 pos2.appendChild(document.createElement("br"));
-var pos3 = document.getElementsByTagName('ul')[0];
-pos3.appendChild(currentTime);
-pos3.appendChild(document.createElement("br"));
-pos3.appendChild(document.createElement("br"));

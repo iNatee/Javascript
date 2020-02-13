@@ -1,0 +1,12 @@
+body  {
+  background-color: lightblue;
+}
+
+.header {
+  color: white;
+}
+
+.TimeAndDate {
+  font-family: verdana;
+  font-size: 20px;
+}
