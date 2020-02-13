@@ -111,11 +111,11 @@ switch (monthInYear)  {
 function outputTime(hrs, mins, secs) {
 
   if (hrs < 12 && hrs != 0) {
-  	hrs = hrs + "AM";
+  hrs = hrs + "AM";
   }
 
    else {
-  	hrs = (hrs - 12) + "PM";
+  hrs = (hrs - 12) + "PM";
   }
 
   if (mins < 10)  {
@@ -177,11 +177,11 @@ function timer() {
 
 
   if (hrs < 12 && hrs != 0) {
-  	ampm = "AM";
+  ampm = "AM";
   }
 
    else {
-  	ampm = "PM";
+  ampm = "PM";
   }
 
   if (mins < 10)  {
@@ -199,18 +199,15 @@ function timer() {
 
 var dateSmall = DDMMYYYY (dd, mm, yyyy),
  dateFull = DAYMONTHYYYY(day, dd, month, yyyy),
- unorderedList = document.createElement('ul'),
-
- listItem = document.createElement('li'),
+ listItem = document.createElement("li"),
  dateLong = document.createTextNode("Full Date: " + dateFull),
- dateShort = document.createTextNode("Short Date: " + dateSmall),
- currentTime = document.createTextNode(idVar);
+ dateShort = document.createTextNode("Short Date: " + dateSmall);
 
-var pos1 = document.getElementsByTagName('ul')[0];
+var pos1 = document.getElementsByTagName("ul")[0];
 pos1.appendChild(dateLong);
 pos1.appendChild(document.createElement("br"));
 pos1.appendChild(document.createElement("br"));
-var pos2 = document.getElementsByTagName('ul')[0];
+var pos2 = document.getElementsByTagName("ul")[0];
 pos2.appendChild(dateShort);
 pos2.appendChild(document.createElement("br"));
 pos2.appendChild(document.createElement("br"));
