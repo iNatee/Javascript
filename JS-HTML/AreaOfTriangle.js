@@ -1,67 +1,66 @@
-function calcArea(a, b, c)  {
+function calcArea(a, b, c) {
 
-  var s = (a + b + c) / 2;
+    var s = (a + b + c) / 2;
 
-  var area = Math.sqrt(s*((s-a)*(s-b)*(s-c)));
+    var area = Math.sqrt(s * ((s - a) * (s - b) * (s - c)));
 
-  return area;
-
-}
-
-function findSideA(repeat){
-
-let error = "";
-
-do{
-
-if(repeat == true)  {
-  error = "Must be a valid number above 0 \n";
-}
-var sideA = prompt(error + 'Please enter the size of Side A:'); //Get Side A
-repeat = true;
-
-} while (sideA == null || sideA == "" || sideA <= 0 || isNaN(sideA))
-
-
-return Number(sideA);
+    return area;
 
 }
 
-function findSideB(repeat){
+function findSideA(repeat) {
 
-let error = "";
+    let error = "";
 
-do{
+    do {
 
-if(repeat == true)  {
-  error = "Must be a valid number above 0 \n";
+        if (repeat == true) {
+            error = "Must be a valid number above 0 \n";
+        }
+        var sideA = prompt(error + 'Please enter the size of Side A:'); //Get Side A
+        repeat = true;
+
+    } while (sideA == null || sideA == "" || sideA <= 0 || isNaN(sideA))
+
+
+    return Number(sideA);
+
 }
-var sideB = prompt(error + 'Please enter the size of Side B:'); //Get Side A
-repeat = true;
 
-} while (sideB == null || sideB == "" || sideB <= 0|| isNaN(sideA))
+function findSideB(repeat) {
+    let error = "";
+
+    do {
+
+        if (repeat == true) {
+            error = "Must be a valid number above 0 \n";
+        }
+        var sideB = prompt(error + 'Please enter the size of Side B:'); //Get Side A
+        repeat = true;
+
+    } while (sideB == null || sideB == "" || sideB <= 0 || isNaN(sideA))
 
 
-return Number(sideB);
+    return Number(sideB);
 
 }
 
-function findSideC(repeat){
+function findSideC(repeat) {
 
-let error = "";
+    let error = "";
 
-do{
+    do {
 
-if(repeat == true)  {
-  error = "Must be a valid number above 0\n";
-}
-var sideC = prompt(error + 'Please enter the size of Side C:'); //Get Side A
-repeat = true;
+        if (repeat == true) {
+            error = "Must be a valid number above 0\n";
+        }
+        var sideC = prompt(error + 'Please enter the size of Side C:'); //Get Side A
+        repeat = true;
 
-} while (sideC == null || sideC == "" || sideC <= 0|| isNaN(sideA))
+    } while (sideC == null || sideC == "" || sideC <= 0 || isNaN(sideA))
 
 
-return Number(sideC);
+    return Number(sideC);
 
 }
 
@@ -73,12 +72,12 @@ var sideArea = Number(calcArea(sideA, sideB, sideC));
 
 var node1 = document.createElement('h1');
 
-if(isNaN(sideArea)) {
-  var node1Text = document.createTextNode('The area of the triangle of size ' + sideA + ', ' + sideB + ', '
-   + sideC + ' cannot be calculated. Sorry');
+if (isNaN(sideArea)) {
+    var node1Text = document.createTextNode('The area of the triangle of size ' + sideA + ', ' + sideB + ', '
+        + sideC + ' cannot be calculated. Sorry');
 } else {
-  var node1Text = document.createTextNode('The area of the triangle of size ' + sideA + ', ' + sideB + ', '
-   + sideC + ', ' + ' is: ' + Number(sideArea));
+    var node1Text = document.createTextNode('The area of the triangle of size ' + sideA + ', ' + sideB + ', '
+        + sideC + ', ' + ' is: ' + Number(sideArea));
 }
 
 node1.appendChild(node1Text);
